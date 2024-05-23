@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { accessTokenState } from '../hooks/Auth';
 import '../styles/LoginPage.css';
+import Nav  from '../components/nav.jsx'
+import Footer from '../components/footer.jsx'
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const setAccessToken = useSetRecoilState(accessTokenState);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(accessToken);
+  }, [accessToken]);
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -35,8 +41,9 @@ const LoginPage = () => {
       if (response.ok) {
         console.log('Login successful:', data.access);
         setAccessToken(data.access);
-        console.log('Access token set in Recoil:', data.access); // 디버깅용 콘솔 로그
-        navigate('/main');
+        console.log('Access token set in Recoil:', accessToken); // 디버깅용 콘솔 로그
+        
+        navigate(-2);
       } else {
         throw new Error(data.message || 'Failed to login');
       }
@@ -49,6 +56,8 @@ const LoginPage = () => {
   };
 
   return (
+    <div>
+      <Nav></Nav>
     <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleLogin} className="login-form">
@@ -75,6 +84,8 @@ const LoginPage = () => {
         </button>
         {error && <div className="error-message">{error}</div>}
       </form>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/nav.css'
-
+import myImage from '../img/logo.png'
 const Nav = () => {
   const navigate = useNavigate();
 
@@ -9,10 +9,10 @@ const Nav = () => {
     <div className="header">
       <div className="header-left">
         <div className="logo">
-          <img src="./img/logo.png" alt="ttobaki logo" />
-          <span>또박이</span>
+          <img onClick={() => navigate('/main')} src={myImage} alt="ttobaki logo" />
         </div>
         <nav className="nav">
+          <a onClick={() => navigate('/main')}>또박이</a>
           <a onClick={() => navigate('/levels')}>난이도별 문제</a>
           <a onClick={() => navigate('/유형별')}>유형별 문제</a>
           <a onClick={() => navigate('/테스트')}>테스트</a>

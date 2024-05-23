@@ -15,9 +15,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/main" element={<MainPage />} />
-          <Route path="/levels" element={<LevelPage />} />
-          <Route path="/level/:id" element={<LevelDetailPage />} />
-          <Route path="/audiotest" element={<AudioTest />} />
+          <Route path="/levels" element={<PrivateRoute><LevelPage /></PrivateRoute>} />
+          <Route path="/level/:id" element={<PrivateRoute><LevelDetailPage /></PrivateRoute>} />
+          <Route path="/audiotest/*" element={<PrivateRoute><AudioTest /></PrivateRoute>} />
           {/* <Route path="/난이도별" element={<난이도별 />} />
           <Route path="/유형별" element={<유형별 />} />
           <Route path="/테스트" element={<테스트 />} />

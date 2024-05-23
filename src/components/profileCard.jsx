@@ -16,7 +16,7 @@ const ProfileCard = () => {
           <div className="profile-details">
             <h2>{user_id}</h2>
             <div>
-              진척도<span className="badge">{user_rank}</span> <span>{user_rating}</span>
+              <span>진척도</span><span className="badge">{user_rank}</span> <span>{user_rating}</span>
             </div>
             <div>
               <span>평가</span><span className="badge">C</span> <span>101</span>
@@ -25,20 +25,16 @@ const ProfileCard = () => {
         </div>
         <div className="profile-stats">
           <div className="stat streak">
-            <h3>스트릭</h3>
-            <p>0일</p>
-            <p>오늘 풀면 1일</p>
+            <h3>나의 레벨</h3>
+            <img alt="level_img"></img>
           </div>
           <div className="stat class">
-            <h3>CLASS 6</h3>
-            <div className="circle-progress">
-              <span>35%</span>
-            </div>
+            <h3>오늘의 문제</h3>
             <p>달성 시 RATING +10</p>
           </div>
-          <div className="stat arena">
-            <h3>아레나</h3>
-            <p>개최 예정인 아레나가 없습니다</p>
+          <div className="stat class">
+            <h3>커뮤니티</h3>
+            <p>커뮤니티 바로가기</p>
           </div>
         </div>
       </div>
