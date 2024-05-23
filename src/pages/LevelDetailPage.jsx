@@ -15,7 +15,8 @@ const LevelDetailPage = () => {
   useEffect(() => {
     const fetchLevelDetail = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/questions/?${level}`);
+        console.log(level.state);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/questions/?level=${level.state}`);
         const data = await response.json();
         if (response.ok) {
           console.log(data);
@@ -78,8 +79,8 @@ const LevelDetailPage = () => {
       <div className="container">
         {levelDetail.map((level) => (
             <div key={level.id} className="level-item">
-            <h2>Level {level.question_number}: {level.word}</h2>
-            <button onClick={() => goToLevelDetail(level.id, level.word)}>Go to Level {level.id} Details</button>
+            <h2>Level {level.level}: {level.word}</h2>
+            <button onClick={() => goToLevelDetail(level.id, level.word)}>Go to question {level.question_number} Details</button>
             {renderStars(level.incorrect_pronounciation)}
             </div>
         ))}
