@@ -75,7 +75,6 @@
     border-radius: 50px;
 }
 
-
 /* 미디어 쿼리를 사용하여 화면 크기에 따라 레이아웃 조절 */
 @media (max-width: 768px) {
     #wrapper {

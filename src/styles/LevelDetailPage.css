@@ -4,10 +4,14 @@
   }
   
   .star {
-    font-size: 24px;
-    color: lightgray;
+    height: 80px;
   }
   
   .star.filled {
     color: gold;
+  }
+
+  .level-name h1 {
+    margin-left: 5%;
+    margin-top: 3%;
   }

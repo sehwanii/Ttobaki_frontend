@@ -21,6 +21,7 @@
   .carousel img {
     width: 100%;
     display: block;
+    height : 450px;
   }
   
   .carousel-button {

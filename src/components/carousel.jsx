@@ -1,7 +1,9 @@
 // carousel.jsx
 import React, { useState, useEffect } from 'react';
 import '../styles/carousel.css';
-
+import img1 from '../img/carousel.png'
+import img2 from '../img/picture1.jpeg'
+import img3 from '../img/picture3.png'
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -49,9 +51,9 @@ const ImageCarousel = ({ images }) => {
 
 const Carousel = () => {
   const images = [
-    'https://via.placeholder.com/800x400?text=First+slide',
-    'https://via.placeholder.com/800x400?text=Second+slide',
-    'https://via.placeholder.com/800x400?text=Third+slide',
+    img1,
+    img2,
+    img3,
   ];
 
   return (

@@ -72,10 +72,10 @@ const LevelPage = () => {
       <div className="header">
           <h1>Levels</h1>
       </div>
-      <div className="container">
+      <div className="level-container">
       {levels.map((level) => (
-          <div key={level.id} className="level-item">
-          <h2>Level {level.id}: {level.name}</h2>
+          <div key={level.name} className="level-item">
+          <h2>{level.name}단계</h2>
           <Doughnut
               data={{
               labels: ['progress', 'left'],
@@ -91,7 +91,7 @@ const LevelPage = () => {
               responsive: true
               }}
           />
-          <button onClick={() => goToLevelDetail(level.id)}>Go to Level {level.id} Details</button>
+          <button onClick={() => goToLevelDetail(level.id)}>문제 풀러 가기</button>
           </div>
       ))}
       </div>

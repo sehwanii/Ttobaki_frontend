@@ -38,6 +38,11 @@
   margin: 5px 0;
 }
 
+.levelImg{
+  height:150px;
+  border-radius: 70%;
+}
+
 .badge {
   background-color: #5cb85c;
   color: #fff;
@@ -55,17 +60,20 @@
   flex: 1;
   text-align: center;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-left: 10px;
 }
 
 .stat.streak {
-  background-color: #dff0d8;
+  background-color: #f3eee3;
 }
 
 .stat.class {
-  background-color: #fcf8e3;
+  background-color: #edcece;
+}
+
+.stat.comunity {
+  background-color: #ebefdb;
 }
 
 .stat.arena {
